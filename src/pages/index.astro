@@ -1,0 +1,228 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+	<nav class="border-gray-200 dark:bg-gray-900">
+	  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+	    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+	        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">~/jallox</span>
+	    </a>
+	    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+	        <span class="sr-only">Open main menu</span>
+	        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+	            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+	        </svg>
+	    </button>
+	    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+	      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+	        <li>
+	          <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">/index</a>
+	        </li>
+	        <li>
+	          <a href="/projects" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">/projects</a>
+	        </li>
+	        <li>
+	          <a href="https://github.com/jallox" class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+				<svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+			      <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+			    </svg>
+				/github
+			  </a>
+			</li>
+			<li>
+				<button id="theme-toggle" type="button" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 hover:cursor-pointer">
+				    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+				    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+				</button>
+			</li>
+
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<section class="bg-pattern-gradient dark:bg-pattern-gradient-d">
+	    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+	        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Hello 👋, i'm Jallox</h1>
+	        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">I'm a fullstack developer currently working at <a href="https://dynamicnodes.net/" data-popover-target="popover-dynamic" class="hover:text-blue-500 underline">Dynamic Nodes</a>, <a href="https://store.smartshub.dev/" data-popover-target="popover-smartshub" class="hover:text-blue-500 underline">Smarts Hub</a> and <a href="https://www.dynamicnodes.net/" data-popover-target="popover-supra" class="hover:text-blue-500 underline">SupraCraft Studio</a>. Focused on frontend and backend developer.</p>
+			<div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+	            <a href="/projects" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+	                View projects
+	                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+	                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+	                </svg>
+	            </a>  
+	        </div>
+	    </div>
+	</section>
+
+	<section id="repo-wrapper" class="relative py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 bg-white dark:bg-gray-900">
+	  <div
+	    id="repo-container"
+	    class="flex flex-wrap justify-center gap-4 max-w-full relative z-10"
+	  >
+	    <!-- JS will populate this -->
+	  </div>
+
+	  <div class="flex flex-col items-center space-y-4 sm:flex-row sm:justify-center sm:space-y-0 pt-5">
+	    <a href="/projects" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+	      View projects
+	      <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+	        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+	      </svg>
+	    </a>  
+	  </div>
+	</section>
+
+
+	<footer class="relative py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 rounded-lg m-8">
+	 <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    	  <span class="text-sm text-gray-300 sm:text-center dark:text-gray-300">© 2025 Jallox. All Rights Reserved.
+    	</span>
+    	<ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-300 dark:text-gray-300 sm:mt-0">
+    	    <li>
+    	        <a href="/" class="hover:underline me-4 md:me-6">/index</a>
+    	    </li>
+    	    <li>
+    	        <a href="/projects" class="hover:underline me-4 md:me-6">/projects</a>
+    	    </li>
+    	    <li>
+    	        <a href="https://github.com/jallox" class="hover:underline">/github</a>
+    	    </li>
+    	</ul>
+    	</div>
+	</footer>
+
+
+
+	<!-- Popovers -->
+	<div data-popover id="popover-dynamic" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+	    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+	        <h3 class="font-semibold text-gray-900 dark:text-white">DynamicNodes</h3>
+	    </div>
+	    <div class="px-3 py-2">
+	        <p>DynamicNodes is a hosting platform wich offers high-quality Minecraft and VPS servers in Miami, US.</p>
+	    </div>
+	    <div data-popper-arrow></div>
+	</div>
+	<div data-popover id="popover-smartshub" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+	    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+	        <h3 class="font-semibold text-gray-900 dark:text-white">SmartsHub</h3>
+	    </div>
+	    <div class="px-3 py-2">
+	        <p>Smarts Hub is a development team for Minecraft plugin and other resources.</p>
+	    </div>
+	    <div data-popper-arrow></div>
+	</div>
+	<div data-popover id="popover-supra" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-xs opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+	    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
+	        <h3 class="font-semibold text-gray-900 dark:text-white">SupraCraft Studio</h3>
+	    </div>
+	    <div class="px-3 py-2">
+	        <p>SupraCraft Studio is a event-making team in Minecraft, owners of Showland and other important titles.</p>
+	    </div>
+	    <div data-popper-arrow></div>
+	</div>
+
+	<!-- Repo Populator -->
+	<script type="module">
+	  const container = document.querySelector("#repo-container");
+
+	  container.innerHTML = `
+	    <div class="w-full flex justify-center items-center py-12">
+	      <div role="status">
+	        <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+	          <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+	          <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+	        </svg>
+	        <span class="sr-only">Loading...</span>
+	      </div>
+	    </div>
+	  `;
+
+	  fetch("/api/github-repos?user=jallox")
+	    .then(res => res.json())
+	    .then(repos => {
+	      if (!Array.isArray(repos)) return;
+
+	      container.innerHTML = repos.slice(0, 4).map(repo => `
+	        <div class="w-[300px] snap-start flex-shrink-0 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ">
+	          <a href="${repo.url}">
+	            <img class="rounded-t-lg w-full h-40 object-cover" src="${repo.image}" alt="${repo.name}" />
+	          </a>
+	          <div class="p-5">
+	            <a href="${repo.url}">
+	              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${repo.name}</h5>
+	            </a>
+	            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+	              ${repo.description ?? "No description"}
+	            </p>
+	            <p class="mb-2 font-normal text-gray-500 dark:text-gray-400 flex items-center gap-1">
+	              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+	                <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"/>
+	              </svg>
+	              ${repo.stars}
+	            </p>
+	            <p class="mb-4 font-normal text-gray-500 dark:text-gray-400 flex items-center gap-1">
+	              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+	                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"/>
+	              </svg>
+	              ${repo.language ?? "Unknown"}
+	            </p>
+	          </div>
+	        </div>
+	      `).join('');
+	    })
+	    .catch(err => {
+	      container.innerHTML = `<p class="text-red-600">Error loading repositories 😢</p>`;
+	      console.error(err);
+	    });
+	</script>
+
+	<script>
+		var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+		var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+		// Change the icons inside the button based on previous settings
+		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		    themeToggleLightIcon.classList.remove('hidden');
+		} else {
+		    themeToggleDarkIcon.classList.remove('hidden');
+		}
+
+		var themeToggleBtn = document.getElementById('theme-toggle');
+
+		themeToggleBtn.addEventListener('click', function() {
+		
+		    // toggle icons inside button
+		    themeToggleDarkIcon.classList.toggle('hidden');
+		    themeToggleLightIcon.classList.toggle('hidden');
+		
+		    // if set via local storage previously
+		    if (localStorage.getItem('color-theme')) {
+		        if (localStorage.getItem('color-theme') === 'light') {
+		            document.documentElement.classList.add('dark');
+		            localStorage.setItem('color-theme', 'dark');
+		        } else {
+		            document.documentElement.classList.remove('dark');
+		            localStorage.setItem('color-theme', 'light');
+		        }
+			
+		    // if NOT set via local storage previously
+		    } else {
+		        if (document.documentElement.classList.contains('dark')) {
+		            document.documentElement.classList.remove('dark');
+		            localStorage.setItem('color-theme', 'light');
+		        } else {
+		            document.documentElement.classList.add('dark');
+		            localStorage.setItem('color-theme', 'dark');
+		        }
+		    }
+		
+		});
+	</script>
+
+
+
+</Layout>
