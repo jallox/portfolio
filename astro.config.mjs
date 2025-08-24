@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -12,4 +12,9 @@ export default defineConfig({
   },
   output: 'server',
   adapter: cloudflare(),
+  env: {
+    schema: {
+      GH_TOKEN: envField.string({ context: "server", access: "secret" }),
+    }
+  }
 });
