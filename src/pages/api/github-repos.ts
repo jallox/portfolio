@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 export const GET: APIRoute = async ({ url }) => {
   const username = 'jallox';
-  const token = import.meta.env.GH_TOKEN;
+  const token = GH_TOKEN;
 
   try {
     const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`, {
