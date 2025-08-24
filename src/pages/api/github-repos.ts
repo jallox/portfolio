@@ -5,6 +5,10 @@ import { GH_TOKEN } from "astro:env/server";
 export const GET: APIRoute = async ({ url }) => {
   const username = 'jallox';
   const token = GH_TOKEN;
+
+  if (!token) {
+    return new Response(JSON.stringify({ error: 'Missing GH_TOKEN' }), { status: 500 });
+  }
   try {
     const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`, {
       headers: {
