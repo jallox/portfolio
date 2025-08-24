@@ -37,6 +37,6 @@ export const GET: APIRoute = async ({ url }) => {
       headers: { 'Content-Type': 'application/json' }
     });
   } catch (err) {
-    return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+    return new Response(JSON.stringify({ error: 'Server error', msg: err }), { status: 500 });
   }
 };
