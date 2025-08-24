@@ -12,5 +12,6 @@ export default defineConfig({
   },
 
   site: 'https://jallox.is-a.dev',
+  output: 'server',
   adapter: cloudflare(),
 });
