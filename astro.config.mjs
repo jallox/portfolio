@@ -10,8 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
-  site: 'https://jallox.is-a.dev',
   output: 'server',
   adapter: cloudflare(),
 });
