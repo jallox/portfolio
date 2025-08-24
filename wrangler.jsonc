@@ -1,10 +1,20 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "jallox-portfolio",
-  // Update to today's date
   "compatibility_date": "2025-08-24",
+  "main": "./dist/_worker.js",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page" // If you have a custom `src/pages/404.astro` page
-  }
+    "not_found_handling": "404-page"
+  },
+    // Add this to your wrangler.jsonc
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "5b6924c201424199bd99cd22f1f8b790",
+      
+      // Optional: preview_id used when running `wrangler dev` for local dev
+      "preview_id": "<ID_OF_PREVIEW_KV_NAMESPACE_FOR_LOCAL_DEVELOPMENT>"
+    }
+  ]
 }
