@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Fs Pixel";
+  src: url("/fs-pixel.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/Poppins-Regular.ttf");
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "Fs Pixel", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
