@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className='w-full h-full relative'>
 
-      
+
 
 
       <HeaderContainer>
@@ -41,12 +41,16 @@ function Home() {
         </div>
       </HeaderContainer>
 
+
+
       <Workplaces />
 
       <p className='text-4xl md:text-6xl h-34 font-pixel mt-32'> <AnimatedRandomText messages={
         "Let's build something amazing together!"} /></p>
 
       <Technologies />
+
+
     </div>
   )
 }

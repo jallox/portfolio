@@ -17,7 +17,20 @@ function Workplaces() {
                     </p>
                 </TextArrow>
             </p>
-
+            <div className="mt-4 border-2 border-gray-600 bg-gray-500/10 rounded-2xl px-6 transition-colors duration-300 hover:shadow-[0_0_15px_2px_rgba(167,139,250,0.2)] hover:border-purple-500">
+                <p className='text-sm text-gray-500 mt-5'>DEC 2025 - TODAY</p>
+                <h1 className='text-2xl'>MixelNodes</h1>
+                <div className='flex flex-wrap gap-2 mt-2 mb-2'>
+                    <span className='bg-emerald-900 rounded-full py-1 px-4 border border-emerald-500 text-sm'>Frontend</span>
+                    <span className='bg-red-900 rounded-full py-1 px-4 border border-red-500 text-sm'>Backend</span>
+                    <span className='bg-sky-900 rounded-full py-1 px-4 border border-sky-500 text-sm'>System Administration</span>
+                    <span className='bg-teal-900 rounded-full py-1 px-4 border border-teal-500 text-sm'>UI/UX Designer</span>
+                </div>
+                <p className='text-gray-300 mb-4'>MixelNodes is a hosting company built from scratch. It aims to provide the best gaming servers, along a unique customer experience.</p>
+                <a href="https://mixelnodes.com/?r=jallox.dev" className="flex items-center mb-6 gap-4 hover:text-purple-500 transition-colors">
+                    Visit website <SquareArrowOutUpRight size={16} />
+                </a>
+            </div>
             <div className='grid grid-cols-1 md:grid-cols-2 relative z-10 mt-4'>
 
                 <div className="border-2 border-gray-600 bg-gray-500/10 rounded-2xl px-6 mr-2 transition-colors duration-300 hover:shadow-[0_0_15px_2px_rgba(167,139,250,0.2)] hover:border-purple-500">
@@ -60,6 +73,7 @@ function Workplaces() {
                 <p className='text-gray-300 mb-4'>As the studio owner, I oversee all aspects of the studio's operations, including creative direction, team management, and strategic planning.</p>
 
             </div>
+
         </section>
     )
 }
