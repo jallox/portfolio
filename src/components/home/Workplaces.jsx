@@ -27,7 +27,7 @@ function Workplaces() {
                     <span className='bg-teal-900 rounded-full py-1 px-4 border border-teal-500 text-sm'>UI/UX Designer</span>
                 </div>
                 <p className='text-gray-300 mb-4'>MixelNodes is a hosting company built from scratch. It aims to provide the best gaming servers, along a unique customer experience.</p>
-                <a href="https://mixelnodes.com/?r=jallox.dev" className="flex items-center mb-6 gap-4 hover:text-purple-500 transition-colors">
+                <a href="https://mixelnodes.com/?r=jayox.dev" className="flex items-center mb-6 gap-4 hover:text-purple-500 transition-colors">
                     Visit website <SquareArrowOutUpRight size={16} />
                 </a>
             </div>
@@ -46,7 +46,7 @@ function Workplaces() {
                     <p className="text-gray-300 mb-3">
                         Smarts Hub is a small development team which aims to create powerful and reliable Minecraft plugins, discord bots.
                     </p>
-                    <a href="https://www.smartshub.dev/" className="flex items-center mb-6 gap-4 hover:text-purple-500 transition-colors">
+                    <a href="https://www.smartshub.dev/?r=jayox.dev" className="flex items-center mb-6 gap-4 hover:text-purple-500 transition-colors">
                         Visit website <SquareArrowOutUpRight size={16} />
                     </a>
                 </div>
