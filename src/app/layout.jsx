@@ -1,6 +1,6 @@
 import { Space_Grotesk, Inter_Tight } from "next/font/google"
 import "./globals.css"
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -24,8 +24,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${spaceGrotesk.variable} ${interTight.variable}`}>
 
       <body>
-        <Analytics />
         {children}
+        <Analytics />
+
       </body>
     </html>
   )
